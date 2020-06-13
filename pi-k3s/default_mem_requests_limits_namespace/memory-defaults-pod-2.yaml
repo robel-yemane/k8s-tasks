@@ -1,0 +1,13 @@
+#set container's limit but not request
+apiVersion: v1
+kind: Pod
+metadata:
+  name: default-mem-demo-2
+spec:
+  containers:
+  - name: default-mem-demo-2-ctr
+    image: nginx
+    resources:
+      limits:
+        memory: "1Gi"
+

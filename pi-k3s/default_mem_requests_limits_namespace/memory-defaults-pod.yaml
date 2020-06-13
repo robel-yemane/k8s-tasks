@@ -1,0 +1,12 @@
+#pod with a container that doesn't specify its own values for memory request
+# and memory limits. It will take the default memory request of 256 MiB and
+# default memory limit of 512 MiB
+apiVersion: v1
+kind: Pod
+metadata:
+  name: default-mem-demo
+spec:
+  containers:
+  - name: default-mem-demo-ctr
+    image: nginx
+
