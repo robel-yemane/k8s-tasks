@@ -1,5 +1,6 @@
-If a LimitRange is created in a namespace that specifies default limit and/or
-default request one of these things happens:
+
+
+If a LimitRange is created in a namespace that specifies default limit and/or default request one of these things happens:
 
 1. Container doesn't specify request and memory limit.
 => Container is given a default memory request and default memory limit as
@@ -9,7 +10,7 @@ specified in the LimitRange.
 => Container's memory request is set to match its memory limit. (The default
 memory request doesn't get assigned).
 
-3. Container specifies it's request but not it's limit.
+3. Container specifies its request but not it's limit.
 => Container's memory request is set to the value specified in the Container's
 configuration file, but the memory limit is set to the default for the
 namespace.
@@ -17,7 +18,7 @@ namespace.
 --
 Motivation for default memory limits and requests
 
-if a namespace has a resourcequota, it helps to have a default value for memory
+if a namespace has a resource quota, it helps to have a default value for memory
 limits. Some of the restrictions imposed on a namespace by a resource quota
 are:
 
@@ -28,3 +29,4 @@ exceed a specified limit.
 If a container does not specify its own memory limit, it is given the default
 limit, and then it can be allowed to run in a namespace that is restricted by a
 quota.
+
